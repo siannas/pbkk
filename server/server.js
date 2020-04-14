@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 const bodyParser = require("body-parser");
-
+const { PORT } = require('../config/config');
 const db = require('./sequelize-setup');
 
 // Bodyparser middleware
@@ -12,7 +12,7 @@ app.use(
 );
 app.use(bodyParser.json());
 
-const { PORT } = require('../config/config');
+
 
 const KategoriUnitController = require('./api/KategoriUnitController');
 
