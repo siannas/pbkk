@@ -1,27 +1,22 @@
-//MSSQL Instance Creation  
-var sqlInstance = require("mssql");
+var express = require('express');
+var app = express();
+const bodyParser = require("body-parser");
 
-//Database configuration  
-var setUp = {
-  server: 'localhost',
-  database: 'TrialDB',
-  user: 'sa',
-  password: 'sa',
-  port: 1433
-};
+const db = require('./sequelize-setup');
 
-sqlInstance.connect(setUp)
+// Bodyparser middleware
+app.use(
+    bodyParser.urlencoded({
+        extended: false
+    })
+);
+app.use(bodyParser.json());
 
-// To retrieve all the data - Start  
-new sqlInstance.Request()
-  .query("select * from Course")
-  .then(function (dbData) {
-    if (dbData == null || dbData.length === 0)
-      return;
-    console.dir('All the courses');
-    console.dir(dbData);
-  })
-  .catch(function (error) {
-    console.dir(error);
-  });
-// To retrieve all the data - End
+const { PORT } = require('../config/config');
+
+const KategoriUnitController = require('./api/KategoriUnitController');
+
+app.use('/kategoriunit', KategoriUnitController);
+
+var port = PORT || 5000
+app.listen(port, () => console.log(`Server up and running on port ${port} !`))
