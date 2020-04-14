@@ -4,40 +4,38 @@ const router = express.Router();
 const {
     Unit
 } = require('../models/Unit');
+const {
+    KategoriUnit
+} = require('../models/KategoriUnit');
 
-router.get('/tes', (req, res) => {
-    Unit.create({
-        id: id,
-        nama: nama,
-        
-    }, {
-        include: [{
-            association: Unit.KategoriUnit,
-        }]
-    });
-});
-
-router.post('/create', (req, res) => {
+router.post('/create', async(req, res) => {
+    const kategoriUnitId = req.body.kategoriUnitId;
     const id = req.body.id;
     const nama = req.body.nama;
 
-    Unit.findByPk(id)
-        .then((ins) => {
-            if (ins !== null) {
-                return res.status(500).json({
-                    message: "failed"
-                });
-            } else {
-                Unit.create({
-                    id: id,
-                    nama: nama
-                });
+    kategoriUnit_ins = await KategoriUnit.findByPk(kategoriUnitId);
+    if(await Unit.findByPk(id)=== null){
+        if(kategoriUnit_ins === null){
+            return res.status(500).json({
+                message: "associated table notfound"
+            });
+        }
 
-                return res.status(200).json({
-                    message: "success"
-                });
-            }
+        Unit.create({
+            id: id,
+            nama: nama,
+            KategoriUnitId: kategoriUnit_ins.id
         });
+
+        return res.status(200).json({
+            message: "success"
+        });
+    }
+    else{
+        return res.status(500).json({
+            message: "failed"
+        });
+    }
 });
 
 router.get('/read', async (req, res) => {
@@ -66,20 +64,9 @@ router.post('/update', async (req, res) => {
 
         const newData = {
             id: req.body.id,
-            nama: req.body.nama
+            nama: req.body.nama,
+            KategoriUnitId: req.body.KategoriUnitId
         }
-
-        // ins.set('id', 3, { raw: true })
-        // ins.changed('id', true);
-
-        // ins.save();
-        // await Unit.upsert(
-        //     newRow, {
-        //         where: {
-        //             id: id
-        //         }
-        //     });
-
 
         Unit.update(
             newData, {
