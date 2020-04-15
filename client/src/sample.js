@@ -2,10 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import jexcel from "jexcel";
 
-import "./styles.css";
+// import "./styles.css";
 import "../node_modules/jexcel/dist/jexcel.css";
 
-class App extends React.Component {
+class Table extends React.Component {
   constructor(props) {
     super(props);
     this.options = props.options;
@@ -40,43 +40,42 @@ var data = [
 ];
 
 var handler = function(obj, cell, val) {
-  console.log('My table id: ' + $(obj).prop('id'));
-  console.log('Cell changed: ' + $(cell).prop('id'));
-  console.log('Value: ' + val);
+  // console.log('My table id: ' + $(obj).prop('id'));
+  // console.log('Cell changed: ' + $(cell).prop('id'));
+  // console.log('Value: ' + val);
 };
 
 var insertrow = function(obj) {
-  alert('new row added on table: ' + $(obj).prop('id'));
+  // alert('new row added on table: ' + $(obj).prop('id'));
 }
 
 var deleterow = function(obj) {
-  alert('row excluded on table: ' + $(obj).prop('id'));
+  // alert('row excluded on table: ' + $(obj).prop('id'));
 }
 
 var options = {
   data: data,
   columns: [
-    { type: 'text', title:'Car', width:120 },
+    { type: 'text', title:'id', width:120, readOnly:true, },
     { type: 'dropdown', title:'Make', width:200, source:[ "Alfa Romeo", "Audi", "Bmw" ] },
     { type: 'calendar', title:'Available', width:200 },
     { type: 'image', title:'Photo', width:120 },
     { type: 'checkbox', title:'Stock', width:80 },
     { type: 'numeric', title:'Price', width:100, mask:'$ #.##,00', decimal:',' },
     { type: 'color', width:100, render:'square', }
- ],
- allowDeleteColumn: false ,
- allowRenameColumn: false,
- columnSorting: false,
- onchange:handler,
-oninsertrow:insertrow,
-ondeleterow:deleterow,
- updateTable:function(instance, cell, col, row, val, label, cellName){
+  ],
+  allowDeleteColumn: false ,
+  allowRenameColumn: false,
+  columnSorting: false,
+  onchange:handler,
+  oninsertrow:insertrow,
+  ondeleterow:deleterow,
+  updateTable:function(instance, cell, col, row, val, label, cellName){
    // Odd row colours
-   if (row % 2) {
-    cell.style.backgroundColor = '#edf3ff';
-}
- }
+    if (row % 2) {
+      cell.style.backgroundColor = '#edf3ff';
+    }
+  }
 };
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App options={options} />, rootElement);
+export default Table;

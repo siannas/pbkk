@@ -8,7 +8,7 @@ const {
 db = {};
 
 const sequelize = new Sequelize(DB_NAME, USER, PASSWORD, {
-    host: '192.168.1.73',
+    host: 'localhost',
     dialectOptions: {
         encrypt: true,
         enableArithAbort: true,

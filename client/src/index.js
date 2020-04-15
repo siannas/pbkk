@@ -1,12 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect,
+  withRouter,
+  useLocation
+} from "react-router-dom";
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Header from './view/header';
+import Layout from './view/layout';
+
+import options_KategoriUnit from './actions/KategoriUnitActions';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Header />
+    <Layout options={options_KategoriUnit}  />
   </React.StrictMode>,
   document.getElementById('root')
 );
