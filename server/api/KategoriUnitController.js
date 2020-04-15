@@ -5,27 +5,17 @@ const {
     KategoriUnit
 } = require('../models/KategoriUnit');
 
-router.post('/create', (req, res) => {
-    const id = req.body.id;
-    const nama = req.body.nama;
+router.post('/create', async (req, res) => {
+    const nama = req.body.nama || "null";
 
-    KategoriUnit.findByPk(id)
-        .then((ins) => {
-            if (ins !== null) {
-                return res.status(500).json({
-                    message: "failed"
-                });
-            } else {
-                KategoriUnit.create({
-                    id: id,
-                    nama: nama
-                });
+    const newData =await KategoriUnit.create({
+        nama: nama
+    });
 
-                return res.status(200).json({
-                    message: "success"
-                });
-            }
-        });
+    return res.status(200).json({
+        message: "success",
+        newData: newData
+    });
 });
 
 router.get('/read', async (req, res) => {
@@ -45,7 +35,7 @@ router.get('/read', async (req, res) => {
         count,
         rows
     });
-})
+});
 router.post('/update', async (req, res) => {
     const trueid = req.body.trueid;
 

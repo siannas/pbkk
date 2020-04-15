@@ -91,10 +91,11 @@ class Content extends React.Component {
             </Toolbar>
           </AppBar>
           <div className={classes.contentWrapper}>
-            <div id="my" ref={this.myRef}/>
-            {/* <Typography color="textSecondary" align="center">
+            <div id="my" ref={this.myRef}/> 
+            <Typography color="textSecondary" align="center">
               No users for this project yet
-            </Typography> */}
+            </Typography>
+            
           </div>
         </Paper>
       );

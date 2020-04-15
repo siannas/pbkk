@@ -18,8 +18,12 @@ import options_KategoriUnit from './actions/KategoriUnitActions';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <Layout options={options_KategoriUnit}  />
+    <Router>
+      <Header  onDrawerToggle={()=>{}}/>
+      <Switch>
+        <Route exact path="/" render={props => ( <Layout options={options_KategoriUnit}  />)}/>
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );

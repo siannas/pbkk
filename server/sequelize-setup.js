@@ -34,7 +34,7 @@ const { CapaianUnit } = require('./models/CapaianUnit');
 // CapaianUnit.belongsTo(Unit);
 
 // KategoriUnit.hasMany(Unit);
-Unit.KategoriUnit = Unit.belongsTo(KategoriUnit);
+// Unit.KategoriUnit = Unit.belongsTo(KategoriUnit);
 
 // sequelize.sync({
 //     force: true

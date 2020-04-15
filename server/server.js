@@ -3,6 +3,9 @@ var app = express();
 const bodyParser = require("body-parser");
 const { PORT } = require('../config/config');
 const db = require('./sequelize-setup');
+const cors = require("cors");
+
+app.use(cors());
 
 // Bodyparser middleware
 app.use(
@@ -17,8 +20,8 @@ app.use(bodyParser.json());
 const KategoriUnitController = require('./api/KategoriUnitController');
 const UnitController = require('./api/UnitController');
 
-app.use('/kategoriunit', KategoriUnitController);
-app.use('/unit', UnitController);
+app.use('/api/kategoriunit', KategoriUnitController);
+app.use('/api/unit', UnitController);
 
 var port = PORT || 5000
 app.listen(port, () => console.log(`Server up and running on port ${port} !`))
