@@ -3,39 +3,48 @@ const router = express.Router();
 
 const {
     Unit
-} = require('../models/Unit');
+} = require('../../backup/Unit');
 const {
     KategoriUnit
-} = require('../models/KategoriUnit');
+} = require('../../backup/KategoriUnit_backup');
 
 router.post('/create', async(req, res) => {
-    const kategoriUnitId = req.body.kategoriUnitId;
-    const id = req.body.id;
-    const nama = req.body.nama;
+    const nama = req.body.nama || "null";
 
-    kategoriUnit_ins = await KategoriUnit.findByPk(kategoriUnitId);
-    if(await Unit.findByPk(id)=== null){
-        if(kategoriUnit_ins === null){
-            return res.status(500).json({
-                message: "associated table notfound"
-            });
-        }
+    const newData =await Unit.create({
+        nama: nama
+    });
 
-        Unit.create({
-            id: id,
-            nama: nama,
-            KategoriUnitId: kategoriUnit_ins.id
-        });
+    const ins = await Unit.findByPk(newData.id);
 
-        return res.status(200).json({
-            message: "success"
-        });
-    }
-    else{
-        return res.status(500).json({
-            message: "failed"
-        });
-    }
+    return res.status(200).json({
+        message: "success",
+        newData: newData,
+        tes: ins
+    });
+    // kategoriUnit_ins = await KategoriUnit.findByPk(kategoriUnitId);
+    // if(await Unit.findByPk(id)=== null){
+    //     if(kategoriUnit_ins === null){
+    //         return res.status(500).json({
+    //             message: "associated table notfound"
+    //         });
+    //     }
+
+    //     Unit.create({
+    //         id: id,
+    //         nama: nama,
+    //         KategoriUnitId: kategoriUnit_ins.id
+    //     });
+
+    //     return res.status(200).json({
+    //         message: "success"
+    //     });
+    // }
+    // else{
+    //     return res.status(500).json({
+    //         message: "failed"
+    //     });
+    // }
 });
 
 router.get('/read', async (req, res) => {

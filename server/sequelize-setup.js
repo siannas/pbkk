@@ -16,15 +16,17 @@ const sequelize = new Sequelize(DB_NAME, USER, PASSWORD, {
     dialect: 'mssql',
 });
 
-require('./models/KategoriUnit').init(sequelize);
-require('./models/Unit').init(sequelize);
-require('./models/DataDasar').init(sequelize);
-require('./models/CapaianUnit').init(sequelize);
+const queryInterface = sequelize.getQueryInterface();
 
-const {KategoriUnit} = require('./models/KategoriUnit');
-const {Unit} = require('./models/Unit');
-const { DataDasar } = require('./models/DataDasar');
-const { CapaianUnit } = require('./models/CapaianUnit');
+// require('./models/KategoriUnit').init(sequelize);
+// require('./models/Unit').init(sequelize);
+// require('./models/DataDasar').init(sequelize);
+// require('./models/CapaianUnit').init(sequelize);
+
+// const {KategoriUnit} = require('./models/KategoriUnit');
+// const {Unit} = require('./models/Unit');
+// const { DataDasar } = require('./models/DataDasar');
+// const { CapaianUnit } = require('./models/CapaianUnit');
 
 
 // DataDasar.hasMany(CapaianUnit);
@@ -35,6 +37,8 @@ const { CapaianUnit } = require('./models/CapaianUnit');
 
 // KategoriUnit.hasMany(Unit);
 // Unit.KategoriUnit = Unit.belongsTo(KategoriUnit);
+
+require('./add-association').up(queryInterface , sequelize);
 
 // sequelize.sync({
 //     force: true

@@ -1,31 +1,17 @@
-const {
-    DataTypes,
-    Model
-} = require('sequelize');
-
-class Unit extends Model {}
-
-const init = (sequelize) => {
-    Unit.init({
-        // Model attributes are defined here
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true
-        },
-        nama: {
-            type: DataTypes.STRING
-            // allowNull defaults to true
-        }
-    }, {
-        // Other model options go here
-        sequelize, // We need to pass the connection instance
-        modelName: 'Unit', // We need to choose the model name
-        timestamps: false,
-    });
+'use strict';
+module.exports = (sequelize, DataTypes) => {
+  const Unit = sequelize.define('Unit', {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    nama: DataTypes.STRING
+  }, {timestamps: false,});
+  Unit.associate = function(models) {
+    // associations can be defined here
+    Unit.belongsTo(models.KategoriUnit);
+  };
+  return Unit;
 };
-
-module.exports = {
-    init,
-    Unit
-}

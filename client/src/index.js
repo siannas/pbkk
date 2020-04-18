@@ -15,6 +15,7 @@ import Header from './view/header';
 import Layout from './view/layout';
 
 import options_KategoriUnit from './actions/KategoriUnitActions';
+import options_Unit from './actions/UnitActions';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -22,6 +23,7 @@ ReactDOM.render(
       <Header  onDrawerToggle={()=>{}}/>
       <Switch>
         <Route exact path="/" render={props => ( <Layout options={options_KategoriUnit}  />)}/>
+        <Route exact path="/unit" render={props => ( <Layout options={options_Unit}  />)}/>
       </Switch>
     </Router>
   </React.StrictMode>,

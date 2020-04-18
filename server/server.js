@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 const bodyParser = require("body-parser");
 const { PORT } = require('../config/config');
-const db = require('./sequelize-setup');
+const db = require('./models/index');
 const cors = require("cors");
 
 app.use(cors());

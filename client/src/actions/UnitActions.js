@@ -1,6 +1,4 @@
 import axios from "axios";
-import $ from "jquery"
-import jexcel from "jexcel";
 import { ArrayOfJsonToArray, JsonToArray } from "../utils/JsonUtil.mjs";
 
 var tableKu = null;
@@ -13,11 +11,12 @@ var changerow = function(obj, cell, x, y, value) {
     const data = {
         trueid: trueid,
         id: arr[0],
-        nama: arr[1]
+        KategoriUnitId: arr[1],
+        nama: arr[2]
     };
 
     axios
-        .post("/api/kategoriunit/update", data)
+        .post("/api/unit/update", data)
         .then(res =>{
             alert("Success");
         })
@@ -34,7 +33,7 @@ var deleterow = async function(obj, row) {
         id: id
     };
     axios
-        .post("/api/kategoriunit/delete", data)
+        .post("/api/unit/delete", data)
         .then(res =>{
             alert("Success");
             return true;
@@ -43,16 +42,15 @@ var deleterow = async function(obj, row) {
             alert("Error");
             console.log(err);
         });
-    
-    return true;
 }
 
 var addNewRow = async function(obj, row) {
     axios
-        .post("/api/kategoriunit/create")
+        .post("/api/unit/create")
         .then(res =>{
-            alert(row);
-            tableKu.setRowData(row+1, JsonToArray(res.data.newData));
+            alert("Success");
+            console.log(res.data.newData);
+            tableKu.setRowData(row+1, res.data.tes);
         })
         .catch(err => {
             alert("Error");
@@ -63,21 +61,31 @@ var addNewRow = async function(obj, row) {
 var options = {
     setTable: async function(tabel){
         tableKu = tabel;
-        try {
-            const response = await axios.get("/api/kategoriunit/read");
-            console.log(response);
-            this.data = ArrayOfJsonToArray(response.data.rows);
-            
-            tableKu.setData(this.data, false);
-        } catch (error) {
-            console.log(error);
-        }
 
+        while (true){
+            var n = 0;
+            
+            try {
+                const response = await axios.get("/api/unit/read");
+                console.log(response.data.rows)
+                tableKu.setData( response.data.rows, true);        
+                break;
+            } catch (error) {
+                console.log(`retrive data : try ${++n}`);
+            }
+
+            await new Promise(resolve => setTimeout(resolve, 500));
+        }
+        
     },
-    data: [[1]],
+    data:  null,
     columns: [
-        { type: 'numeric', title:'id', width:100, },
-        { type: 'text', title:'nama', width:200, },
+        { type: 'numeric', title:'id', name:'id', width:100, },
+        { type: 'dropdown', title:'kategori unit', name:'KategoriUnitId', width:200, 
+            url: '/api/kategoriunit/category', 
+            autocomplete:true},
+        { type: 'text', title:'nama', name:'nama',  width:200, },
+        
     ],
     allowDeleteColumn: false ,
     allowRenameColumn: false,
@@ -86,7 +94,7 @@ var options = {
     allowManualInsertRow: false,
     allowInsertColumn: false,
     onbeforechange:changerow,
-    onbeforedeleterow: deleterow,
+    onbeforedeleterow:deleterow,
     oninsertrow:addNewRow,
     updateTable:function(instance, cell, col, row, val, label, cellName){
      // Odd row colours

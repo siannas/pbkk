@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const {
-    KategoriUnit
-} = require('../models/KategoriUnit');
+const KategoriUnit = require('../models/index')['KategoriUnit'];
 
 router.post('/create', async (req, res) => {
     const nama = req.body.nama || "null";
@@ -95,6 +93,13 @@ router.post('/delete', async (req, res) => {
         });
     }
 
+});
+
+router.get('/category', async (req, res) => {
+    const opt = { attributes: ['id', ['nama', 'name']]};
+    const result = await KategoriUnit.findAll(opt);
+
+    return res.status(200).json(result);
 });
 
 module.exports = router;
