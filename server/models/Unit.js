@@ -7,11 +7,12 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: true
     },
-    nama: DataTypes.STRING
+    nama: DataTypes.STRING,
   }, {timestamps: false,});
   Unit.associate = function(models) {
     // associations can be defined here
     Unit.belongsTo(models.KategoriUnit);
+
   };
   return Unit;
 };

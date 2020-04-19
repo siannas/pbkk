@@ -1,19 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
-const {
-    Unit
-} = require('../../backup/Unit');
-const {
-    KategoriUnit
-} = require('../../backup/KategoriUnit_backup');
+const Unit = require('../models/index')['Unit'];
 
 router.post('/create', async(req, res) => {
     const nama = req.body.nama || "null";
 
-    const newData =await Unit.create({
-        nama: nama
-    });
+    const newData =await Unit.create();
 
     const ins = await Unit.findByPk(newData.id);
 
