@@ -16,12 +16,18 @@ app.use(
 app.use(bodyParser.json());
 
 
+const C = require('./api');
 
-const KategoriUnitController = require('./api/KategoriUnitController');
-const UnitController = require('./api/UnitController');
-
-app.use('/api/kategoriunit', KategoriUnitController);
-app.use('/api/unit', UnitController);
+app.use('/api/capaianunit', C.CapaianUnitController);
+app.use('/api/kategoriunit', C.KategoriUnitController);
+app.use('/api/datadasar', C.DataDasarController);
+app.use('/api/indikatorperiode', C.IndikatorPeriodeController);
+app.use('/api/indikatorsatuankerja', C.IndikatorSatuanKerjaController);
+app.use('/api/jenissatker', C.JenisSatKerController);
+app.use('/api/masterindikator', C.MasterIndikatorController);
+app.use('/api/periode', C.PeriodeController);
+app.use('/api/satuankerja', C.SatuanKerjaController);
+app.use('/api/unit', C.UnitController);
 
 var port = PORT || 5000
 app.listen(port, () => console.log(`Server up and running on port ${port} !`))

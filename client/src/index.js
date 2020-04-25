@@ -16,6 +16,7 @@ import Layout from './view/layout';
 
 import options_KategoriUnit from './actions/KategoriUnitActions';
 import options_Unit from './actions/UnitActions';
+import options_DataDasar from './actions/DataDasarAction';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -24,6 +25,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" render={props => ( <Layout options={options_KategoriUnit}  />)}/>
         <Route exact path="/unit" render={props => ( <Layout options={options_Unit}  />)}/>
+        <Route exact path="/datadasar" render={props => ( <Layout options={options_DataDasar}  />)}/>
       </Switch>
     </Router>
   </React.StrictMode>,
