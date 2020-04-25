@@ -8,6 +8,14 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
+      AspekId: // name of the key we're adding 
+      {
+          type: Sequelize.INTEGER,
+          references: {
+              model: { tableName: 'Aspeks'}, // name of Target model
+              key: 'id', // key in Target model that we're referencing
+          },
+      },
       PenyebutId: // name of the key we're adding 
       {
           type: Sequelize.INTEGER,
@@ -28,7 +36,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       deskripsi: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(1000)
       },
       defaultBobot: {
         type: Sequelize.FLOAT

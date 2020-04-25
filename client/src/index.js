@@ -17,6 +17,8 @@ import Layout from './view/layout';
 import options_KategoriUnit from './actions/KategoriUnitActions';
 import options_Unit from './actions/UnitActions';
 import options_DataDasar from './actions/DataDasarAction';
+import options_Aspek from './actions/AspekAction';
+import options_MasterIndikator from './actions/MasterIndikatorAction';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -26,6 +28,8 @@ ReactDOM.render(
         <Route exact path="/" render={props => ( <Layout options={options_KategoriUnit}  />)}/>
         <Route exact path="/unit" render={props => ( <Layout options={options_Unit}  />)}/>
         <Route exact path="/datadasar" render={props => ( <Layout options={options_DataDasar}  />)}/>
+        <Route exact path="/aspek" render={props => ( <Layout options={options_Aspek}  />)}/>
+        <Route exact path="/masterindikator" render={props => ( <Layout options={options_MasterIndikator}  />)}/>
       </Switch>
     </Router>
   </React.StrictMode>,

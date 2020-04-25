@@ -86,6 +86,8 @@ var MyModule = function (url) {
         setTable: initTable,
         data: [],
         columns: [],
+        tableOverflow: true,
+        tableWidth: "904px",
         allowDeleteColumn: false,
         allowRenameColumn: false,
         columnSorting: false,

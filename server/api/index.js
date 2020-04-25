@@ -8,3 +8,4 @@ exports.MasterIndikatorController = require('./MasterIndikatorController');
 exports.PeriodeController = require('./PeriodeController');
 exports.SatuanKerjaController = require('./SatuanKerjaController');
 exports.UnitController = require('./UnitController');
+exports.AspekController = require('./AspekController');

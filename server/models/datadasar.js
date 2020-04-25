@@ -1,4 +1,6 @@
 'use strict';
+var moment = require('moment');
+
 module.exports = (sequelize, DataTypes) => {
   const DataDasar = sequelize.define('DataDasar', {
     id: {
@@ -8,7 +10,36 @@ module.exports = (sequelize, DataTypes) => {
       autoIncrement: true
     },
     nama: DataTypes.STRING,
-    expiredDate: DataTypes.DATE
+    expiredDate: {
+        type: DataTypes.DATE,
+        get: function() {
+            var date = this.getDataValue('expiredDate');
+            if( !moment(date).isValid()){
+                return date;
+            }
+            return moment.utc(date).format('YYYY-MM-DD HH:mm:ss')
+        }
+    },
+    createDate:{
+        type: DataTypes.DATE,
+        get: function() {
+            var date = this.getDataValue('createDate');
+            if( !moment(date).isValid()){
+                return date;
+            }
+            return moment.utc(date).format('YYYY-MM-DD HH:mm:ss')
+        }
+    },
+    lastUpdate:{
+        type: DataTypes.DATE,
+        get: function() {
+            var date = this.getDataValue('lastUpdate');
+            if( !moment(date).isValid()){
+                return date;
+            }
+            return moment.utc(date).format('YYYY-MM-DD HH:mm:ss')
+        }
+    }
   }, {
     timestamps: true,
     updatedAt: 'lastUpdate',

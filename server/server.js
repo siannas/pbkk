@@ -28,6 +28,7 @@ app.use('/api/masterindikator', C.MasterIndikatorController);
 app.use('/api/periode', C.PeriodeController);
 app.use('/api/satuankerja', C.SatuanKerjaController);
 app.use('/api/unit', C.UnitController);
+app.use('/api/aspek', C.AspekController);
 
 var port = PORT || 5000
 app.listen(port, () => console.log(`Server up and running on port ${port} !`))
