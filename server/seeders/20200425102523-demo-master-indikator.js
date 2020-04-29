@@ -2,9 +2,8 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.bulkInsert('MasterIndikators', 
-    [
-        {
+    return queryInterface.bulkInsert('MasterIndikators',
+      [{
           "id": 1,
           "AspekId": 1,
           "PembilangId": 1,
@@ -13,7 +12,7 @@ module.exports = {
           "deskripsi": "Prodi yang telah mendapatkan akreditasi ABET, IABEE, ASIIN dll sesuai dengan kepmendikbud no 83 tahun 2020.  AUN-QA Tidak termasuk",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 2,
@@ -24,7 +23,7 @@ module.exports = {
           "deskripsi": "Jumlah judul penelitian dengan melibatkan peneliti dari universita mitra di luar negeri",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 3,
@@ -35,7 +34,7 @@ module.exports = {
           "deskripsi": "Jumlah judul penelitian yang dilakukan dengan mitra dari luar negeri dibagi jumlah dosen",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 4,
@@ -46,7 +45,7 @@ module.exports = {
           "deskripsi": "Jumlah program studi yang terakreditasi A oleh BAN-PT dibagi dengan jumlah program studi",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 5,
@@ -57,7 +56,7 @@ module.exports = {
           "deskripsi": "Jurnal internasional adalah jurnal yang memenuhi kriteria sebagai berikut: a. Karya ilmiah yang diterbitkan ditulis dengan memenuhi kaidah ilmiah dan etika keilmuan; b. Memiliki ISSN; c. Ditulis dengan menggunakan bahasa resmi PBB (Arab, Inggris, Perancis, Rusia, Spanyol dan Tiongkok); d. Memiliki terbitan versi daring (online); e. Dewan Redaksi (Editorial Board) adalah pakar di bidangnya paling sedikit berasal dari 4 (empat) negara; f. Artikel Ilmiah yang diterbitkan dalam 1 (satu) nomor terbitan paling sedikit penulisnya berasal dari 2 (dua) negara; dan g. Terindeks oleh database internasional: Web of Science, Scopus, Microsoft Academic Search.",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 6,
@@ -68,7 +67,7 @@ module.exports = {
           "deskripsi": "Jurnal internasional adalah jurnal yang memenuhi kriteria sebagai berikut: a.Karya ilmiah yang diterbitkan ditulis dengan memenuhi kaidah ilmiah dan etika keilmuan;  b.Memiliki ISSN;  c.Ditulis dengan menggunakan bahasa resmi PBB (Arab, Inggris, Perancis, Rusia, Spanyol dan Tiongkok);  d.Memiliki terbitan versi daring (online);  e.Dewan Redaksi (Editorial Board) adalah pakar di bidangnya paling sedikit berasal dari 4 (empat) negara;  f .Artikel Ilmiah yang diterbitkan dalam 1 (satu) nomor terbitan paling sedikit penulisnya berasal dari 2 (dua) negara; dan  g.Terindeks oleh database internasional: Web of Science, Scopus, Microsoft Academic Search. Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 7,
@@ -79,7 +78,7 @@ module.exports = {
           "deskripsi": "Publikasi internasional adalah hasil penelitian yang dimuat dalam jurnal ilmiah internasional atau prosiding yang memiliki International Standard Serial Number (ISSN) dan/atau buku yang telah diterbitkan oleh perguruan tinggi atau penerbit lainnya dan memiliki International Standard Book Number (ISBN). Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 8,
@@ -90,7 +89,7 @@ module.exports = {
           "deskripsi": "Publikasi internasional adalah hasil penelitian yang dimuat dalam jurnal ilmiah internasional atau prosiding yang memiliki International Standard Serial Number (ISSN) dan/atau buku yang telah diterbitkan oleh perguruan tinggi atau penerbit lainnya dan memiliki International Standard Book Number (ISBN). Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 9,
@@ -101,7 +100,7 @@ module.exports = {
           "deskripsi": "Jumlah sitasi Scopus diambil dari SINTA.",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 10,
@@ -112,7 +111,7 @@ module.exports = {
           "deskripsi": "H-Index Scopus diambil dari SINTA.",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 11,
@@ -123,7 +122,7 @@ module.exports = {
           "deskripsi": "Jumlah kejuaraan yang memperoleh juara 1/medali emas/juara umum/the best atau Juara 2/perak atau juara 3/perunggu, dihitung per kategori lomba (per medali) di tingkat nasional. Termasuk MAWAPRES tingkat nasional Tidak termasuk juara harapan maupun lomba pada skala regional/provinsi Prestasi mahasiswa harus dimasukkan kedalam prestasi.its.ac.id serta dilaporkan ke direktorat kemahasiswaan",
           "defaultBobot": 8,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 12,
@@ -134,7 +133,7 @@ module.exports = {
           "deskripsi": "Jumlah penghargaan yang diterima oleh dosen dari unit terkait pada suatu kegiatan atau kompetisi yang diselengarakan oleh lembaga yang beruputasi dan diakui secara publik, seperti oleh kementrian dll.  Tidak termasuk penghargaan masa bakti PNS seperti satyalancana dll Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 8,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 13,
@@ -145,7 +144,7 @@ module.exports = {
           "deskripsi": "Tim yang didanai adalah tim PKM yang telah lolos seleksi dan telah mendapatkan dana dari DIKTI. Jumlah Mahasiswa S1 atau D4 adalah yang teregistrasi pada sistem integra akademik pada tahun perhitungan ",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 14,
@@ -156,7 +155,7 @@ module.exports = {
           "deskripsi": "Jumlah judul kegiatan penelitian oleh dosen di departemen terkait serta tercatat dalam direktorat Riset dan Pengabdian Masyarakat (DRPM) ITS.  Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 15,
@@ -167,7 +166,7 @@ module.exports = {
           "deskripsi": "Jumlah judul kegiatan penelitian  yang diketuai oleh dosen di departemen terkait serta tercatat dalam direktorat Riset dan Pengabdian Masyarakat (DRPM) ITS.",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 16,
@@ -178,7 +177,7 @@ module.exports = {
           "deskripsi": "Mahasiswa S3 yang telah lulus dalam 6 semester atau kurang dibagi Jumlah intake angkatan lulusan terkait S3 pada tahun tersebut  yang statusnya aktif. Lulus tepat waktu program S3 adalah jika masa studinya kurang dari atau sama dengan 8 Semester",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 17,
@@ -189,7 +188,7 @@ module.exports = {
           "deskripsi": "Jumlah Mahasiswa yang memperoleh sertifikat kompetensi/profesional yang dikeluarkan oleh badan/lembaga yang bereputasi dan diakui secara nasional maupun internasional, seperti BNSP, Microsoft, Oracle, Cisco, dll berdasarkan hasil evaluasi/ujian yang diselenggarakannya, bukan sertifikat peserta mengikuti pelatihan atau kursus.",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 18,
@@ -200,7 +199,7 @@ module.exports = {
           "deskripsi": "Jumlah publikasi bersama terindeks Scopus yang memiliki co-author dari luar negeri dibagi jumlah dosen Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 19,
@@ -211,7 +210,7 @@ module.exports = {
           "deskripsi": "Mata kuliah daring (Blended Learning) adalah mata kuliah yang diselenggarakan dengan ketentuan dimana peserta didik merupakan mahasiswa ITS dan maksimal 30 % dari tatap muka dilakukan secara on-line melalui platform myITS Classroom. Pelaksanaan kegiatan akademik dari mata kuliah daring sinkronus (Blended Learning) terjadwal dalam semester yang berjalan.  Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 20,
@@ -222,7 +221,7 @@ module.exports = {
           "deskripsi": "Mahasiswa S2 yang telah lulus dalam 4 semester atau kurang dibagi jumlah intake angkatan S2 pada tahun tersebut yang statusnya aktif. Lulus tepat waktu program S2 adalah jika masa studinya kurang dari atau sama dengan 4 Semester",
           "defaultBobot": 6,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 21,
@@ -233,7 +232,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa yang berwirausaha secara mandiri maupun yang mendapat insentif dari Ditjen Pendidikan Tinggi dan/atau dari perguruan tinggi untuk mengembangkan usaha. misal wirausaha mandiri: Jualan offline maupun online, dll",
           "defaultBobot": 6,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 22,
@@ -244,7 +243,7 @@ module.exports = {
           "deskripsi": "Mahasiswa S1/D4 yang telah lulus dalam 8 semester atau kurang dibagi dengan jumlah mahasiswa intake angkatan pada tahun lulusan tersebut (program S1 atau D4 ) yang statusnya aktif. Misal wisuda lulusan pada tahun 2020 (maret, september), maka pembaginya ada jumlah mahasiswa angkatan 2016 yang teregistrasi pada tahun 2016 Lulus tepat waktu program S1/D4 adalah jika masa studinya kurang dari atau sama dengan 8 Semester",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 23,
@@ -255,7 +254,7 @@ module.exports = {
           "deskripsi": "Jumlah paper di jurnal nasional yang terindex di SINTA dibagi dengan total dosen di unit terkait",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 24,
@@ -266,7 +265,7 @@ module.exports = {
           "deskripsi": "Seminar internasional terindex global adalah seminar yang menghasilkan prosiding yang memiliki International Standard Serial Number (ISSN) Publikasi Terindex global sesuai kemendikbud: Web of Science, Thomson Reuters, dan Scopus, Microsoft Academic Search Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 25,
@@ -277,7 +276,7 @@ module.exports = {
           "deskripsi": "Lulusan (S1 atau D4) yang langsung bekerja merupakan indikator untuk mengukur lulusan yang memperoleh pekerjaan dengan masa tunggu kurang dari 12 (dua belas) bulan berdasarkan Laporan Tracer Study (TS) Perguruan Tinggi terhadap lulusan yang lulus 2 (dua) tahun sebelum pelaksanaan Tracer Study (periode TS-2). Misal tahun perhitungan adalah 2020, maka tracer study ditujukan pada lulusan tahun 2018 Melanjutkan studi ke jenjang berikutnya adalah termasuk dihitung dalm kategori ini",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 26,
@@ -288,7 +287,7 @@ module.exports = {
           "deskripsi": "Mata kuliah atau modul dengan MOOC adalah mata kuliah atau modul yang memiliki konten video dengan presenter dosen ybs serta durasi dan mutu yang ditentukan oleh Tim Mutu MOOC ITS, serta diupload ke sistem myITS Learning. Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 27,
@@ -299,7 +298,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa yang mendapat juara 1,2, atau 3 pada kejuaraan/lomba tingkat nasional dihitung per nama mahasiswa (jika seorang mahasiswa mendapat lebih dari 1 kejuaraan/lomba, dianggap 1 mahasiswa) Prestasi mahasiswa harus dimasukkan kedalam prestasi.its.ac.id serta dilaporkan ke direktorat kemahasiswaan",
           "defaultBobot": 4,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 28,
@@ -310,7 +309,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa yang mendapat juara 1,2, atau 3 pada kejuaraan/lomba (perseorangan atau individu) tingkat nasional dihitung per nama mahasiswa (jika seorang mahasiswa mendapat lebih dari 1 keuaraan/lomba, dianggap 1 mahasiswa) Prestasi mahasiswa harus dimasukkan kedalam prestasi.its.ac.id serta dilaporkan ke direktorat kemahasiswaan Jumlah Mahasiswa S1 atau D4 adalah yang teregistrasi pada sistem integra akademik pada tahun perhitungan",
           "defaultBobot": 4,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 29,
@@ -321,7 +320,7 @@ module.exports = {
           "deskripsi": "Jumlah kejuaraan tingkat internasional (Juara 1/emas/the best/juara umum, 2/perak atau 3/perunggu)  Prestasi mahasiswa harus dimasukkan kedalam prestasi.its.ac.id serta dilaporkan ke direktorat kemahasiswaan",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 30,
@@ -332,7 +331,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen yang diundang sebagai Keynote Speaker di Seminar Internasional atau pada kegiatan yang setara",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 31,
@@ -343,7 +342,7 @@ module.exports = {
           "deskripsi": "Jumlah Dosen yang menjadi editor dari jurnal atau conference terindex scopus ",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 32,
@@ -354,7 +353,7 @@ module.exports = {
           "deskripsi": "Jumlah penghargaan yang diterima oleh dosen dalam kegiatan (awarding) berskala internasional. Bisa kompetisi lomba, best paper international conference. Tidak termasuk penerimaan hibah penelitian Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 33,
@@ -365,7 +364,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa asing yang masuk ke ITS, baik dalam program dagree ataupun non degree",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 34,
@@ -376,7 +375,7 @@ module.exports = {
           "deskripsi": "Jumlah kegiatan kuliah tamu, workshop dan seminar internasional dengan narasumber dari luar negeri ",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 35,
@@ -387,7 +386,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa yang mendapatkan Juara 1, 2 atau 3 pada kejuaraan internasional dengan jumlah anggota lebih 1 atau team, jika seorang mahasiswa mendapat lebih dari 1 kejuaraan/lomba, dianggap 1 mahasiswa Prestasi mahasiswa harus dimasukkan kedalam prestasi.its.ac.id serta dilaporkan ke direktorat kemahasiswaan",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 36,
@@ -398,7 +397,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa yang mendapatkan Juara 1, 2 atau 3 pada kejuaraan internasional perseorangan, jika seorang mahasiswa mendapat lebih dari 1 kejuaraan/lomba, dianggap 1 mahasiswa Prestasi mahasiswa harus dimasukkan kedalam prestasi.its.ac.id serta dilaporkan ke direktorat kemahasiswaan",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 37,
@@ -409,7 +408,7 @@ module.exports = {
           "deskripsi": "Jumlah Dosen yang menjadi reviewer dari jurnal atau conference terindex scopus ",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 38,
@@ -420,7 +419,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa ITS yang ke PT luar negeri, baik dalam program dagree ataupun non degree Jumlah Mahasiswa adalah yang jumlah mahasiswa semua jenjang yang teregistrasi pada sistem integra akademik pada tahun perhitungan",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 39,
@@ -431,7 +430,7 @@ module.exports = {
           "deskripsi": "Organisasi Asosiasi internasional diantaranya : IEEE, ACM, SAE, WEF, iAENG dll",
           "defaultBobot": 3,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 40,
@@ -442,7 +441,7 @@ module.exports = {
           "deskripsi": "Jumlah prodi yang menyelenggarakan program International Undergraduate Program (IUP).",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 41,
@@ -453,7 +452,7 @@ module.exports = {
           "deskripsi": "Jumlah Temuan hasil audit yang dilakukan oleh BPK, KAI ataupun IRJEN yang belum ditanggapi hingga batas akhir waktu yang ditentukan",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 42,
@@ -464,7 +463,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa S2 dan S3 yang terdaftar di sistem integra akademik, dibagi dengan jumlah total mahasiswa dalam unit terkait.Jumlah Mahasiswa adalah yang teregistrasi pada sistem integra akademik pada tahun perhitungan",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 43,
@@ -475,7 +474,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen dari unit terkait untuk melakukan kunjungan keluar negeri dalam rangka kegiatan akademik maupun penelitian seperti program WCP, kuliah tamu, keynote speaker. Tidak termasuk yang presenterconference. Jumlah Dosen adalah dosen keseluruhan di unitnya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 9,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 44,
@@ -486,7 +485,7 @@ module.exports = {
           "deskripsi": "Jumlah Dosen yang memperoleh sertifikat kompetensi/profesional yang dikeluarkan oleh badan/lembaga yang bereputasi dan diakui secara nasional maupun internasional, seperti BNSP, Microsoft, Oracle, Cisco, dll berdasarkan hasil evaluasi/ujian yang diselenggarakannya, bukan sertifikat peserta mengikuti pelatihan atau workshopJumlah Kumulatif",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 45,
@@ -497,7 +496,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa yang mengikuti kegiatan Merdeka Belajar (kegiatan yang setara dengan 20 SKS di luar prodi). a. Mengambil mata kuliah di luar prodi dalam Perguruan Tinggi yang sama b. Mengambil mata kuliah di Perguruan Tinggi lainnya c. Magang di industri/lembaga profesi/lembaga penelitian dan lain-lain d. Pengabdian masyarakat di desa dan kegiatan sosial lainnya",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 46,
@@ -508,7 +507,7 @@ module.exports = {
           "deskripsi": "Jumlah Perguruan Tinggi LN mitra yang mengisi kuesioner QS",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 47,
@@ -519,7 +518,7 @@ module.exports = {
           "deskripsi": "Jumlah paten dan HKI yang di daftarkan pada tahun berjalan. ",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 48,
@@ -530,7 +529,7 @@ module.exports = {
           "deskripsi": "Jumlah prodi yang memberikan kesempatan bagi mahasiswanya untuk mengikuti Program Merdeka Belajar (20 SKS di luar prodi di dalam Perguruan Tinggi dan 40 SKS di luar Perguruan Tinggi)",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 49,
@@ -541,7 +540,7 @@ module.exports = {
           "deskripsi": "Jumlah lab yang mendapatkan sertifikasi LBE dari DRPM ITS",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 50,
@@ -552,7 +551,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa baru yang mendapat beasiswa bidikmisi atau KIPK dibagi dengan jumlah mahasiswa baru  yang teregistrasi dalam sistem integra akademik  (Program S1, D4) .Jumlah Mahasiswa S1 adalah yang teregistrasi pada sistem integra akademik pada tahun perhitungan",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 51,
@@ -563,7 +562,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa S3 dengan semua status yang terdaftar dalam sistem integra akademik dibagi dengan jumlah total mahasiswa yang teregistrasi dalam sistem integra akademik dalam unit terkait.Jumlah Mahasiswa adalah yang teregistrasi pada sistem integra akademik pada tahun perhitungan",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 52,
@@ -574,7 +573,7 @@ module.exports = {
           "deskripsi": "Jumlah pemasukan dana dalam bentuk UKT, SPI dan SPP dari mahasiswa Pascasarjana.Jumlah Mahasiswa Pascasarjana adalah yang teregistrasi pada sistem integra akademik pada tahun perhitungan",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 53,
@@ -585,7 +584,7 @@ module.exports = {
           "deskripsi": "Program magang yang dilakukan oleh mahasiswa program Sarjana atau Sarjana Terapan ke industri minimal dilaksanakan dalam kurun waktu 3 bulan Jumlah Mahasiswa S1 atau D4 adalah yang teregistrasi pada sistem integra akademik pada tahun perhitungan ",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 54,
@@ -596,7 +595,7 @@ module.exports = {
           "deskripsi": "Jumlah layanan yang diberikan oleh unit terkait yang diintegrasikan ke sistem Unit Layanan Terpadu (ULT), seperti permohonan legalisir, surat rekomendasi dll",
           "defaultBobot": 6,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 55,
@@ -607,7 +606,7 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa S2 dengan semua status yang terdaftar dalam sistem integra akademik dibagi dengan jumlah total mahasiswa yang teregistrasi dalam sistem integra akademik  dalam unit terkait.Jumlah Mahasiswa S1 atau D4 adalah yang teregistrasi pada sistem integra akademik pada tahun perhitungan ",
           "defaultBobot": 6,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 56,
@@ -618,7 +617,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen atau peneliti dari universitas luar negeri yang melakukan kunjungan ke fakultas atau departemen terkait untuk memberikan presentasi atau kuliah tamu atau kerjasama penelitian. ",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 57,
@@ -629,7 +628,7 @@ module.exports = {
           "deskripsi": "Dokumen ataupun file yang terkait profil unit meliputi brosur, video profile, file presentasi yang bisa digunakan untuk media promosi dan pengenalan unit terkait, baik dalam bahasa indonesia dan bahasa inggris. Capaian indikator bernilai 1 jika terdapat semua. ",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 58,
@@ -640,7 +639,7 @@ module.exports = {
           "deskripsi": "Jumlah buku hasil karya dosen departemen terkait diterbitkan oleh perguruan tinggi atau penerbit lainnya dan memiliki International Standard Book Number(ISBN).Kumulatif 3 tahun terakhir dari tahun perhitunganJumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 59,
@@ -651,7 +650,7 @@ module.exports = {
           "deskripsi": "Jumlah pemasukan dana dalam bentuk UKT, SPI dan SPP dari mahasiswa S1/D4 dalam setahun (2 semester). Nilai didapat dari dir.RenBangJumlah Mahasiswa S1 atau D4 adalah yang teregistrasi pada sistem integra akademik pada tahun perhitungan",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 60,
@@ -662,7 +661,7 @@ module.exports = {
           "deskripsi": "Nilai index maturitas SPIP yang diberikan oleh Badan Pengawas Keuangan dan Pembangunan (BPKP).",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 61,
@@ -673,7 +672,7 @@ module.exports = {
           "deskripsi": "Jumlah Mata kuliah/praktikum yang dilayani oleh laboratorium",
           "defaultBobot": 4,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 62,
@@ -684,7 +683,7 @@ module.exports = {
           "deskripsi": "Jumlah Mahasiswa yang terlibat dalam penelitian Dosen",
           "defaultBobot": 3,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 63,
@@ -695,7 +694,7 @@ module.exports = {
           "deskripsi": "Jumlah Prodi Baru dibagi Jumlah Departemen",
           "defaultBobot": 3,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 64,
@@ -706,7 +705,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen yang mengalami kenaikan jabatan fungsional dalam tahun berjalan perhitungan Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll (Selain Golongan IV-E).",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 65,
@@ -717,7 +716,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen yang mulai tugas belajar S3 pada tahun berjalan Jumlah Dosen bergelar S2 Aktif",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 66,
@@ -728,7 +727,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen dengan jabatan Lektor Kepala dan tercatat dalam sistem kepegawaian Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 6,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 67,
@@ -739,7 +738,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen dengan jabatan Guru Besar / profesor dan tercatat dalam sistem kepegawaian Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 6,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 68,
@@ -750,7 +749,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen yang memiliki pengalaman bekerja di industri / lembaga profesi / bekerja di luar negeri minimal 1 tahun, termasuk postdoc selama minimal 1 tahun Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 69,
@@ -761,7 +760,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen bergelar S3 dan tercatat dalam sistem kepegawaian Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar atau Menjabat di tempat lain dll.",
           "defaultBobot": 5,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 70,
@@ -772,7 +771,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen PNS dan non PNS yang mendapatkan Jabatan fungsional pertama pada tahun berjalan kurang dari 1 tahun sejak pengangkatan penuhMisal jika pengangkatan dari CPNS menjadi PNS tanggal 31 Des 2019, maka dalam kurun waktu 1 tahun telah mendapatkan jabatan fungsional pertama",
           "defaultBobot": 4,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 71,
@@ -783,7 +782,7 @@ module.exports = {
           "deskripsi": "Jumlah dosen yang mengikuti pelatihan / workshop untuk meningkatkan kemampuan baik dalam hal profesionalisme atau penelitian, baik di dalam negeri atau di luar negeri dan mendapat sertifikat peserta pelatihan/workshop.  Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll.",
           "defaultBobot": 4,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 72,
@@ -794,7 +793,7 @@ module.exports = {
           "deskripsi": "Jumlah tendik yang mengikuti pelatihan/workshop dalam rangka meningkatkan profesionalisme baik di dalam negeri atau di luar negeri dan mendapat sertifikat peserta pelatihan/workshop.",
           "defaultBobot": 4,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 73,
@@ -805,7 +804,7 @@ module.exports = {
           "deskripsi": "rata-rata waktu dosen mendapatkan jabatan fungsional pertama Jabatan fungsional pertama sejak pengangkatan penuh",
           "defaultBobot": 4,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 74,
@@ -816,7 +815,7 @@ module.exports = {
           "deskripsi": "Jumlah Dosen adalah dosen keseluruhan di departemennya termasuk yang sedang Tugas Belajar, Ijin Belajar, Menjabat di tempat lain dll. Jumlah Mahasiswa adalah yang teregistrasi pada sistem integra akademik pada tahun perhitungan",
           "defaultBobot": 3,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 75,
@@ -827,7 +826,7 @@ module.exports = {
           "deskripsi": "Terlaksananya Indeks Kualitas Lingkungan (IKL) > 2 dan standar penerapan Kesehatan Keselamatan Kerja dan Lingkungan (K3L) IKL disusun berdasar indikator pemeringkatan UI Greenmetric dengan indikator Penataan dan Infrastruktur, Energi dan Perubahan Iklim, Limbah, Air, Transportasi dan Pendidikan, dengan range nilai 1 sd 5, semakin tinggi semakin baik. Nilai IKL dan pemenuhan sarana dan prosedur standar operasional K3L di unit kerja diukur berdasar kuesioner yang diisi oleh unit dan divalidasi oleh tim smart ecocampus dan tim K3L. Pengisian kuesioner IKL dilakukan sekali dalam setahun antara kuartal 2 - 3, dalam rangka untuk mendukung pemeringkatan UI Greenmetric.",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 76,
@@ -838,7 +837,7 @@ module.exports = {
           "deskripsi": "Toilet bersih lebih dari 80% berdasarkan kriteria ketersediaan sarana prasarana, bagaimana kondisinya serta upaya pemeliharaan yang dilakukan serta inovasi kenyamanan toilet yang ada di unit yang memiliki nilai di atas batas standar minimum. Kegiatan ini diukur berdasar kuesioner yang diisi, didokumentasikan oleh unit dan divalidasi oleh tim smart eco-campusJika jumlah toilet bersih yang sesuai standar < 80%, maka capaian kinerja indikator ini adalah 0. Dan jika lebih dari atau sama dengan 80%, capaiannya adalah 1",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 77,
@@ -849,7 +848,7 @@ module.exports = {
           "deskripsi": "Kegiatan yang dilakukan terkait dengan upaya pengurangan sampah, upaya guna ulang dan upaya daur ulang sampah. Pemilahan sampah di sumber/unit berdasar jenisnya yaitu sampah yang bisa didaur ulang kembali, sampah organik yang membusuk, serta sampah residu. Kegiatan ini diukur berdasar kuesioner yang diisi, didokumentasikan oleh unit dan divalidasi oleh tim smart eco-campus.",
           "defaultBobot": 6,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 78,
@@ -860,7 +859,7 @@ module.exports = {
           "deskripsi": "Jumlah judul kegiatan pengabdian masyarakat yang diketuai oleh dosen di laboratorium terkait serta tercatat dalam direktorat Riset dan Pengabdian Masyarakat (DRPM) ITS",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 79,
@@ -871,7 +870,7 @@ module.exports = {
           "deskripsi": "  dari kontrak kerjasama dengan industri, pemerintah pusat, pemerintah daerah, dan sebagainya atas nama ITS dan tercatat dalam Direktorat Kerjasama dan Pengelolaan Usaha (Dir. KPU) ITS.",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 80,
@@ -882,7 +881,7 @@ module.exports = {
           "deskripsi": "Nilai kerjasama adalah Jumlah penghasilan dalam satu tahun yang diperoleh dari kontrak kerjasama dengan industri, pemerintah pusat, pemerintah daerah, dan sebagainya atas nama ITS dan tercatat dalam Direktorat Kerjasama dan Pengelolaan Usaha (Dir. KPU) ITS. Dosen yang terlibat diberikan bobot kontribusi oleh ketua tim.",
           "defaultBobot": 7,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         },
         {
           "id": 81,
@@ -893,15 +892,13 @@ module.exports = {
           "deskripsi": "Jumlah mahasiswa yang terlibat dalam kegiatan pengabdian masyarakat yang diketuai oleh dosen di laboratorium terkait serta tercatat dalam direktorat Riset dan Pengabdian Masyarakat (DRPM) ITS",
           "defaultBobot": 3,
           "createDate": new Date(),
-           "lastUpdate": new Date()
+          "lastUpdate": new Date()
         }
-    ]
-    , {},
-    {
+      ], {}, {
         'id': {
           autoIncrement: true
         }
-    });
+      });
   },
 
   down: (queryInterface, Sequelize) => {

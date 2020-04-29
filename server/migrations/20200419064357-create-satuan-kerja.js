@@ -4,9 +4,9 @@ module.exports = {
     return queryInterface.createTable('SatuanKerjas', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV1
       },
       JenisSatKerId: // name of the key we're adding 
       {
@@ -18,7 +18,7 @@ module.exports = {
       },
       IndukSatKerId: // name of the key we're adding 
       {
-          type: Sequelize.INTEGER,
+          type: Sequelize.UUID,
           references: {
               model: { tableName: 'SatuanKerjas'}, // name of Target model
               key: 'id', // key in Target model that we're referencing
@@ -30,11 +30,14 @@ module.exports = {
       email: {
         type: Sequelize.STRING
       },
-      createdAt: {
+      levelUnit: {
+        type: Sequelize.INTEGER
+      },
+      createDate: {
         allowNull: false,
         type: Sequelize.DATE
       },
-      updatedAt: {
+      lastUpdate: {
         allowNull: false,
         type: Sequelize.DATE
       },
