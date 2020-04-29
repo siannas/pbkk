@@ -1,4 +1,6 @@
 'use strict';
+var moment = require('moment');
+
 module.exports = (sequelize, DataTypes) => {
   const SatuanKerja = sequelize.define('SatuanKerja', {
     id: {
