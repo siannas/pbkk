@@ -16,10 +16,15 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+import { Container } from '@material-ui/core';
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
 const styles = (theme) => ({
+  root:{
+		padding: 0,
+
+	},
   secondaryBar: {
     zIndex: 0,
   },
@@ -45,7 +50,7 @@ function Header(props) {
   const { classes, onDrawerToggle } = props;
 
   return (
-    <React.Fragment>
+    <Container className={classes.root}>
       <AppBar color="primary" position="sticky" elevation={0}>
         <Toolbar>
           <Grid container spacing={1} alignItems="center">
@@ -125,7 +130,7 @@ function Header(props) {
           <Tab textColor="inherit" label="Usage" />
         </Tabs>
       </AppBar>
-    </React.Fragment>
+    </Container>
   );
 }
 

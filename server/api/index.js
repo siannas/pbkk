@@ -9,3 +9,8 @@ exports.PeriodeController = require('./PeriodeController');
 exports.SatuanKerjaController = require('./SatuanKerjaController');
 exports.UnitController = require('./UnitController');
 exports.AspekController = require('./AspekController');
+
+exports.PenelitianController = require('./PenelitianController');
+exports.PublikasiController = require('./PublikasiController');
+exports.AbmasController = require('./AbmasController');
+exports.DosenController = require('./DosenController');
