@@ -87,7 +87,7 @@ function Header(props) {
           </Grid>
         </Toolbar>
       </AppBar>
-      <AppBar
+      {/* <AppBar
         component="div"
         className={classes.secondaryBar}
         color="primary"
@@ -115,8 +115,8 @@ function Header(props) {
             </Grid>
           </Grid>
         </Toolbar>
-      </AppBar>
-      <AppBar
+      </AppBar> */}
+      {/* <AppBar
         component="div"
         className={classes.secondaryBar}
         color="primary"
@@ -129,7 +129,7 @@ function Header(props) {
           <Tab textColor="inherit" label="Templates" />
           <Tab textColor="inherit" label="Usage" />
         </Tabs>
-      </AppBar>
+      </AppBar> */}
     </Container>
   );
 }

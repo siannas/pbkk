@@ -32,21 +32,26 @@ import TablePivot from './view/table pivot';
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      {/* <Sidebar/>
-			<Header  onDrawerToggle={()=>{}}/> */}
-      <Switch>
-        <Route exact path="/dosen" render={props => ( <TablePivot uri={`/api/dosen/read`}/> )}/>
-        <Route exact path="/penelitian" render={props => ( <TablePivot uri={`/api/penelitian/read`}/> )}/>
-        <Route exact path="/publikasi" render={props => ( <TablePivot uri={`/api/publikasi/read`}/> )}/>
-        <Route exact path="/abmas" render={props => ( <TablePivot uri={`/api/abmas/read`}/> )}/>
-        {/* <Route exact path="/" render={props => ( <Layout options={options_KategoriUnit}  />)}/>
-        <Route exact path="/unit" render={props => ( <Layout options={options_Unit}  />)}/>
-        <Route exact path="/datadasar" render={props => ( <Layout options={options_DataDasar}  />)}/>
-        <Route exact path="/aspek" render={props => ( <Layout options={options_Aspek}  />)}/>
-        <Route exact path="/masterindikator" render={props => ( <Layout options={options_MasterIndikator}  />)}/>
-        <Route exact path="/jenissatker" render={props => ( <Layout options={options_JenisSatKer}  />)}/>
-        <Route exact path="/satuankerja" render={props => ( <Layout options={options_SatuanKerja}  />)}/> */}
-      </Switch>
+      <Sidebar/>
+      <div 
+      style={{width:"calc(100% - 240px)"}}
+      >
+        <Header  onDrawerToggle={()=>{}}/>
+        <Switch>
+            <Route exact path="/dosen" render={props => ( <TablePivot uri={`/api/dosen/read`}/> )}/>
+            <Route exact path="/penelitian" render={props => ( <TablePivot uri={`/api/penelitian/read`}/> )}/>
+            <Route exact path="/publikasi" render={props => ( <TablePivot uri={`/api/publikasi/read`}/> )}/>
+            <Route exact path="/abmas" render={props => ( <TablePivot uri={`/api/abmas/read`}/> )}/>
+            
+            {/* <Route exact path="/" render={props => ( <Layout options={options_KategoriUnit}  />)}/>
+            <Route exact path="/unit" render={props => ( <Layout options={options_Unit}  />)}/>
+            <Route exact path="/datadasar" render={props => ( <Layout options={options_DataDasar}  />)}/>
+            <Route exact path="/aspek" render={props => ( <Layout options={options_Aspek}  />)}/>
+            <Route exact path="/masterindikator" render={props => ( <Layout options={options_MasterIndikator}  />)}/>
+            <Route exact path="/jenissatker" render={props => ( <Layout options={options_JenisSatKer}  />)}/>
+            <Route exact path="/satuankerja" render={props => ( <Layout options={options_SatuanKerja}  />)}/> */}
+        </Switch>
+      </div>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

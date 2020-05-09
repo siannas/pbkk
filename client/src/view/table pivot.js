@@ -27,14 +27,15 @@ export class App extends React.PureComponent {
     <div style={{width:'100%'}}>
 			<Async promiseFn={getRecord} uri={this.uri}>
 			{({ data, err, isLoading }) => {
-          if (isLoading) return "Loading..."
-          if (err) return `Something went wrong: ${err.message}`
+                if (isLoading) return "Loading..."
+                if (err) return `Something went wrong: ${err.message}`
 
-          if (data)
-            return (
-							<WebDataRocksReact.Pivot toolbar={true} height={'calc(100vh - 10.8px)'} report={report(data)}/>
-            )
-        }}
+                if (data)
+                    return (
+                        <WebDataRocksReact.Pivot toolbar={true} height={'calc(100vh - 10.8px)'} report={report(data)}/> 
+                                    // <WebDataRocksReact.Pivot toolbar={true} height={'calc(100vh - 10.8px)'} report={report([])}/>
+                    )
+            }}
 			</Async>
     </div>
     );
