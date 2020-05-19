@@ -28,6 +28,7 @@ import options_SatuanKerja from './actions/SatuanKerjaAction';
 import options_MasterIndikator from './actions/MasterIndikatorAction';
 import Sidebar from './view/sidebar';
 import TablePivot from './view/table pivot';
+import TableKonkin from './view/tableKonkin';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -42,6 +43,7 @@ ReactDOM.render(
             <Route exact path="/penelitian" render={props => ( <TablePivot uri={`/api/penelitian/read`}/> )}/>
             <Route exact path="/publikasi" render={props => ( <TablePivot uri={`/api/publikasi/read`}/> )}/>
             <Route exact path="/abmas" render={props => ( <TablePivot uri={`/api/abmas/read`}/> )}/>
+            <Route exact path="/konkin" render={props => ( <TablePivot uri={`/api/konkin/read`}/> )}/>
             
             {/* <Route exact path="/" render={props => ( <Layout options={options_KategoriUnit}  />)}/>
             <Route exact path="/unit" render={props => ( <Layout options={options_Unit}  />)}/>

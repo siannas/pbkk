@@ -60,32 +60,37 @@ const List = {
 }
 
 router.get('/read', async (req, res) => {
-    IndikatorSatuanKerja.findAll({
-        include: [
-            {
-                model: IndikatorPeriode,
-                attributes: ['id'],
-                include: {
-                    model: MasterIndikator,
-                    attributes: ['nama'],
-                    include: {
-                        model: Aspek,
-                    },
+    // IndikatorSatuanKerja.findAll({
+    //     include: [
+    //         {
+    //             model: IndikatorPeriode,
+    //             attributes: ['id'],
+    //             include: {
+    //                 model: MasterIndikator,
+    //                 attributes: ['nama'],
+    //                 include: {
+    //                     model: Aspek,
+    //                 },
 
-                },
+    //             },
 
-            },
-            {
-                model: SatuanKerja,
-                attributes: ['id','nama'],
-                where: {
-                    nama: "Departemen Arsitektur"
-                }
+    //         },
+    //         {
+    //             model: SatuanKerja,
+    //             attributes: ['id','nama'],
+    //             where: {
+    //                 nama: "Departemen Arsitektur"
+    //             }
 
-            },
-        ]
-    }).then((rows) => {
-        return res.status(200).json(rows);
+    //         },
+    //     ]
+    // }).then((rows) => {
+    //     return res.status(200).json(rows);
+    // });
+    var myquery = ""
+
+    sequelize.query("SELECT * FROM [dbo].[Dosens]",{ raw: true  } ).then( (rows) => {
+        return res.status(200).json(rows[0]);
     });
 })
 
