@@ -5,7 +5,7 @@ module.exports = {
       id: {
         allowNull: false,
         primaryKey: true,
-        type: Sequelize.DATEONLY
+        type: Sequelize.INTEGER
       },
       nama: {
         type: Sequelize.STRING

@@ -14,3 +14,5 @@ exports.PenelitianController = require('./PenelitianController');
 exports.PublikasiController = require('./PublikasiController');
 exports.AbmasController = require('./AbmasController');
 exports.DosenController = require('./DosenController');
+
+exports.KonKinController = require("./KonKinController");

@@ -8,7 +8,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER
     },
     bobot: DataTypes.FLOAT
-  }, {});
+  }, {
+    timestamps: false,
+  });
   IndikatorPeriode.associate = function(models) {
     // associations can be defined here
     IndikatorPeriode.belongsTo(models.MasterIndikator, {

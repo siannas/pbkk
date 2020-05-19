@@ -3,7 +3,7 @@ var Module = {
         Router.get('/read', async (req, res) => {
 
             const offset = parseInt(req.query.offset) || 0;
-            const limit = parseInt(req.query.limit) || 10;
+            const limit = parseInt(req.query.limit) || 30;
         
             const {
                 count,

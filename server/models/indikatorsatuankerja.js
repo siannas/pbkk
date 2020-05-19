@@ -17,7 +17,13 @@ module.exports = (sequelize, DataTypes) => {
   });
   IndikatorSatuanKerja.associate = function(models) {
     // associations can be defined here
-    IndikatorSatuanKerja.belongsTo(models.SatuanKerja);
+    IndikatorSatuanKerja.belongsTo(models.SatuanKerja, {
+      foreignKey: 'SatKerId'
+    });
+
+    IndikatorSatuanKerja.belongsTo(models.IndikatorPeriode, {
+      foreignKey: 'IndikatorPeriodeId'
+    });
   };
   return IndikatorSatuanKerja;
 };

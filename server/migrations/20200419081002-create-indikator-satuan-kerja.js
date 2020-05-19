@@ -16,6 +16,14 @@ module.exports = {
             key: 'id', // key in Target model that we're referencing
         },
       },
+      IndikatorPeriodeId:
+      {
+        type: Sequelize.INTEGER,
+        references: {
+            model: { tableName: 'IndikatorPeriodes'}, // name of Target model
+            key: 'id', // key in Target model that we're referencing
+        },
+      },
       bobot: {
         type: Sequelize.FLOAT
       },

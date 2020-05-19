@@ -18,7 +18,7 @@ module.exports = {
       },
       PeriodeId: // name of the key we're adding 
       {
-          type: Sequelize.DATEONLY,
+          type: Sequelize.INTEGER,
           references: {
               model: { tableName: 'Periodes'}, // name of Target model
               key: 'id', // key in Target model that we're referencing
@@ -27,14 +27,6 @@ module.exports = {
       bobot: {
         type: Sequelize.FLOAT
       },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      }
     });
   },
   down: (queryInterface, Sequelize) => {

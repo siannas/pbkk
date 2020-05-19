@@ -35,5 +35,7 @@ app.use('/api/publikasi', C.PublikasiController);
 app.use('/api/abmas', C.AbmasController);
 app.use('/api/dosen', C.DosenController);
 
+app.use('/api/konkin', C.KonKinController);
+
 var port = PORT || 5000
 app.listen(port, () => console.log(`Server up and running on port ${port} !`))

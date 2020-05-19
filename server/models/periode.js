@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const Periode = sequelize.define('Periode', {
     id: {
-      type: DataTypes.DATEONLY,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
     },
