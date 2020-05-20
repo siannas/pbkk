@@ -12,6 +12,13 @@ import { Route, MemoryRouter } from 'react-router';
 // import { Link as RouterLink } from 'react-router-dom';
 import {Link as RouterLink} from '@material-ui/core';
 
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import Collapse from '@material-ui/core/Collapse';
+
+import TreeView from '@material-ui/lab/TreeView';
+import TreeItem from '@material-ui/lab/TreeItem';
+
 const Styles = makeStyles(theme => ({
     root:{
         display:'block',
@@ -78,6 +85,14 @@ export default function Sidebar(props){
                         <ListItemLink to="/abmas" text="Abmas" />
                         <ListItemLink to="/penelitian" text="Penelitian" />
                         <ListItemLink to="/publikasi" text="Publikasi" />
+                        <Collapse in={true} timeout="auto" unmountOnExit>
+                          <List aria-label="sidebar menu">
+                            <ListItemLink to="/dosen" text="Dosen"  />
+                            <ListItemLink to="/abmas" text="Abmas" />
+                            <ListItemLink to="/penelitian" text="Penelitian" />
+                            <ListItemLink to="/publikasi" text="Publikasi" />
+                          </List>
+                        </Collapse>
                     </List>
                 </div>
             </Box>

@@ -8,6 +8,47 @@ let report = (mydata) => ({
     dataSource: {
         data: mydata
     },
+    slice:{
+      rows: [
+        {
+            uniqueName: "aspek"
+        },
+        {
+            uniqueName: "komponenAspek"
+        },
+        {
+            uniqueName: "indikatorKinerja"
+        }
+      ],
+      columns: [
+        {
+            uniqueName: "Measures"
+        }
+      ],
+      measures: [
+          {
+              uniqueName: "bobot",
+              aggregation: "sum"
+          },
+          {
+              uniqueName: "target",
+              aggregation: "sum"
+          },
+          {
+              uniqueName: "capaian",
+              aggregation: "sum"
+          }
+      ],
+      expands: {
+        expandAll: true,
+      }
+    },
+    options: {
+      grid: {
+          showHeaders: false,
+          showTotals: "off"
+      }
+    }
 });
 
 const getRecord = async ( { uri }  ) => {
@@ -32,7 +73,7 @@ export class App extends React.PureComponent {
 
                 if (data)
                     return (
-                        <WebDataRocksReact.Pivot toolbar={true} height={'calc(100vh - 10.8px)'} report={report(data)}/> 
+                        <WebDataRocksReact.Pivot toolbar={false} height={'calc(100vh - 10.8px)'} report={report(data)}/> 
                                     // <WebDataRocksReact.Pivot toolbar={true} height={'calc(100vh - 10.8px)'} report={report([])}/>
                     )
             }}

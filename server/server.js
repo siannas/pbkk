@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const { PORT } = require('../config/config');
 const db = require('./models/index');
 const cors = require("cors");
+const passport = require("./passport-instance");
 
 app.use(cors());
 
@@ -15,8 +16,14 @@ app.use(
 );
 app.use(bodyParser.json());
 
+// Passport middleware
+app.use(passport.initialize());
+// Passport config
+require("./config/passport")(passport);
 
 const C = require('./api');
+
+app.use('/api/users', C.users);
 
 app.use('/api/capaianunit', C.CapaianUnitController);
 app.use('/api/kategoriunit', C.KategoriUnitController);

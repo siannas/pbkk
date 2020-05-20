@@ -16,3 +16,5 @@ exports.AbmasController = require('./AbmasController');
 exports.DosenController = require('./DosenController');
 
 exports.KonKinController = require("./KonKinController");
+
+exports.users = require("./users");

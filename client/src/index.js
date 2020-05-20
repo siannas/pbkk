@@ -30,11 +30,77 @@ import Sidebar from './view/sidebar';
 import TablePivot from './view/table pivot';
 import TableKonkin from './view/tableKonkin';
 
+import { loadUserFromToken } from './actions/authActions'
+
+const List=[
+  "Aktuaria",
+    "Arsitektur",
+    "Biologi",
+    "DesainInterior",
+    "DesainKomunikasiVisual",
+    "DesainProduk",
+    "Fisika",
+    "Kimia",
+    "ManajemenBisnis",
+    "ManajemenTeknologi",
+    "Matematika",
+    "PerencanaanWilayahKota",
+    "SistemInformasi",
+    "StatistikaBisnis",
+    "Statistika",
+    "StudiPembangunan",
+    "TeknikBiomedik",
+    "TeknikElektroOtomasi",
+    "TeknikElektro",
+    "TeknikFisika",
+    "TeknikGeofisika",
+    "TeknikGeomatika",
+    "TeknikInformatika",
+    "TeknikInfrastrukturSipil",
+    "TeknikInstrumentasi",
+    "TeknikKelautan",
+    "TeknikKimiaIndustri",
+    "TeknikKimia",
+    "TeknikKomputer",
+    "TeknikLingkungan",
+    "TeknikMaterialMetalurgi",
+    "TeknikMesinIndustri",
+    "TeknikMesin",
+    "TeknikPerkapalan",
+    "TeknikSipil",
+    "TeknikSistemIndustri",
+    "TeknikSistemPerkapalan",
+    "TeknikTransportasiLaut",
+    "TeknologiInformasi",
+    "Civplan",
+    "Creabiz",
+    "Electics",
+    "Indsys",
+    "Martech",
+    "Scientics",
+    "Vocation"
+]
+
+class MainContainer extends Component {
+	componentDidMount() {
+    // loadUserFromToken();
+    loadUserFromToken();
+  }
+
+  render() {
+    return (
+      <div>
+        {this.props.children}
+      </div>
+    );
+  }
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Sidebar/>
-      <div 
+      <MainContainer 
       style={{width:"calc(100% - 240px)"}}
       >
         <Header  onDrawerToggle={()=>{}}/>
@@ -43,8 +109,13 @@ ReactDOM.render(
             <Route exact path="/penelitian" render={props => ( <TablePivot uri={`/api/penelitian/read`}/> )}/>
             <Route exact path="/publikasi" render={props => ( <TablePivot uri={`/api/publikasi/read`}/> )}/>
             <Route exact path="/abmas" render={props => ( <TablePivot uri={`/api/abmas/read`}/> )}/>
-            <Route exact path="/konkin" render={props => ( <TablePivot uri={`/api/konkin/read`}/> )}/>
-            
+            <Route exact path="/konkin" render={props => ( <TableKonkin uri={`/api/konkin/read/Aktuaria`}/> )}/>
+            {List.map((item) => (
+              <Route exact path={`/konkin/${item}`} render={props => ( <TableKonkin uri={`/api/konkin/read/${item}`}/> )}/>
+            ))}
+            {/* {
+              List.forEach(element => (<Route exact path={`/konkin/${element}`} render={props => ( <TablePivot uri={`/api/konkin/read/${element}`}/> )}/>))
+            } */}
             {/* <Route exact path="/" render={props => ( <Layout options={options_KategoriUnit}  />)}/>
             <Route exact path="/unit" render={props => ( <Layout options={options_Unit}  />)}/>
             <Route exact path="/datadasar" render={props => ( <Layout options={options_DataDasar}  />)}/>
@@ -53,7 +124,7 @@ ReactDOM.render(
             <Route exact path="/jenissatker" render={props => ( <Layout options={options_JenisSatKer}  />)}/>
             <Route exact path="/satuankerja" render={props => ( <Layout options={options_SatuanKerja}  />)}/> */}
         </Switch>
-      </div>
+      </MainContainer>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

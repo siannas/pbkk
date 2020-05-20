@@ -59,7 +59,7 @@ const List = {
     "Vocation": "Fakultas Vokasi"
 }
 
-router.get('/read', async (req, res) => {
+router.get('/read/:satker', async (req, res) => {
     // IndikatorSatuanKerja.findAll({
     //     include: [
     //         {
@@ -87,9 +87,30 @@ router.get('/read', async (req, res) => {
     // }).then((rows) => {
     //     return res.status(200).json(rows);
     // });
-    var myquery = ""
 
-    sequelize.query("SELECT * FROM [dbo].[Dosens]",{ raw: true  } ).then( (rows) => {
+    const satkerku = List[req.params.satker];
+
+    if(typeof satkerku == 'undefined'){
+        return res.status(404)        // HTTP status 404: NotFound
+            .send('Not found');
+    }
+
+    var myquery = `SELECT [IndikatorSatuanKerja].[id], 
+                    [IndikatorSatuanKerja].[bobot], 
+                    [IndikatorSatuanKerja].[target], 
+                    [IndikatorSatuanKerja].[capaian],
+                    [MasterIndikator].[nama] AS [indikatorKinerja],  
+                    [Aspek].[aspek] AS [aspek], 
+                    [Aspek].[komponenAspek] AS [komponenAspek], 
+                    [SatuanKerja].[nama] AS [SatuanKerja] 
+
+                    FROM [IndikatorSatuanKerjas] AS [IndikatorSatuanKerja] 
+                    LEFT OUTER JOIN [IndikatorPeriodes] AS [IndikatorPeriode] ON [IndikatorSatuanKerja].[IndikatorPeriodeId] = [IndikatorPeriode].[id] 
+                    LEFT OUTER JOIN [MasterIndikators] AS [MasterIndikator] ON [IndikatorPeriode].[MasterId] = [MasterIndikator].[id] 
+                    LEFT OUTER JOIN [Aspeks] AS [Aspek] ON [MasterIndikator].[AspekId] = [Aspek].[id] 
+                    INNER JOIN [SatuanKerjas] AS [SatuanKerja] ON [IndikatorSatuanKerja].[SatKerId] = [SatuanKerja].[id] AND [SatuanKerja].[nama] = N'${satkerku}';`
+
+    sequelize.query(myquery,{ raw: true  } ).then( (rows) => {
         return res.status(200).json(rows[0]);
     });
 })
