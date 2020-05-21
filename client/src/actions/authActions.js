@@ -3,7 +3,6 @@ import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 
 export const loginUser = (userData, callbackFunc) => {
-    dispatch(setUserLoading());
     axios
         .post("/api/users/login", userData)
         .then(res => {
@@ -22,18 +21,22 @@ export const loginUser = (userData, callbackFunc) => {
 
         })
         .catch(err =>{
-            toggleCatchError(dispatch, err);
+
         });
 };
 
 
-export const loadUserFromToken = () => {
+export const loadUserFromToken = async(callbackFunc) => {
     // Get token from local storage
     let token = localStorage.getItem("jwtToken")
     if(!token || token === '') {//if there is no token, dont bother
-        return;
+        callbackFunc(false);
+        return ({data:"token gak ada"});
     }
-    axios
+    console.log("token "+token);
+
+    callbackFunc(true);
+    await axios
         .get("/api/users/my/token",
             {headers: {
                 "authorization" : token
@@ -43,5 +46,7 @@ export const loadUserFromToken = () => {
             // Decode token to get user data
             const decoded = jwt_decode(token);
             return decoded;
-        }).catch(err =>{});
+        }).catch(err =>{
+            return ({data:"gak ada"});
+        });
 };

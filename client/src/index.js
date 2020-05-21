@@ -81,15 +81,31 @@ const List=[
     "Vocation"
 ]
 
-class MainContainer extends Component {
-	componentDidMount() {
+class MainContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      authenticated: false
+    };
+
+    this.SetLogin = this.SetLogin.bind(this);
+  }
+  
+
+  SetLogin = function(auth) {
+    this.setState({authenticated: auth});
+
+    console.log(this.state.authenticated);
+  }
+
+	async componentDidMount() {
     // loadUserFromToken();
-    loadUserFromToken();
+    await loadUserFromToken(this.SetLogin);
   }
 
   render() {
     return (
-      <div>
+      <div {...this.props}>
         {this.props.children}
       </div>
     );
@@ -116,13 +132,13 @@ ReactDOM.render(
             {/* {
               List.forEach(element => (<Route exact path={`/konkin/${element}`} render={props => ( <TablePivot uri={`/api/konkin/read/${element}`}/> )}/>))
             } */}
-            {/* <Route exact path="/" render={props => ( <Layout options={options_KategoriUnit}  />)}/>
+            <Route exact path="/kategoriunit" render={props => ( <Layout options={options_KategoriUnit}  />)}/>
             <Route exact path="/unit" render={props => ( <Layout options={options_Unit}  />)}/>
             <Route exact path="/datadasar" render={props => ( <Layout options={options_DataDasar}  />)}/>
             <Route exact path="/aspek" render={props => ( <Layout options={options_Aspek}  />)}/>
             <Route exact path="/masterindikator" render={props => ( <Layout options={options_MasterIndikator}  />)}/>
             <Route exact path="/jenissatker" render={props => ( <Layout options={options_JenisSatKer}  />)}/>
-            <Route exact path="/satuankerja" render={props => ( <Layout options={options_SatuanKerja}  />)}/> */}
+            <Route exact path="/satuankerja" render={props => ( <Layout options={options_SatuanKerja}  />)}/>
         </Switch>
       </MainContainer>
     </Router>

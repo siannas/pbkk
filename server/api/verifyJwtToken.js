@@ -17,7 +17,9 @@ module.exports = {
     // decode token
     jwt.verify(token, keys.secretOrKey, function (err, user) {
       if (err)
-        throw err;
+        return res.status(401).json({
+          message: 'token invalid'
+        });
 
       //return user using the id from w/in JWTToken
       User.findByPk(user.id)
