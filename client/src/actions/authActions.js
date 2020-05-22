@@ -50,3 +50,10 @@ export const loadUserFromToken = async(callbackFunc) => {
             return ({data:"gak ada"});
         });
 };
+
+export const logoutUser = () => {
+    // Remove token from local storage
+    localStorage.removeItem("jwtToken");
+    // Remove auth header for future requests
+    setAuthToken(false);
+};

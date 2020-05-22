@@ -18,6 +18,11 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import { Container } from '@material-ui/core';
 
+import { logoutUser } from '../actions/authActions';
+import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
 const styles = (theme) => ({
@@ -80,9 +85,18 @@ function Header(props) {
               </Tooltip>
             </Grid>
             <Grid item>
-              <IconButton color="inherit" className={classes.iconButtonAvatar}>
-                <Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" />
-              </IconButton>
+              <PopupState variant="popover" popupId="demo-popup-menu">
+                {(popupState) => (
+                  <React.Fragment>
+                    <IconButton color="inherit" className={classes.iconButtonAvatar} {...bindTrigger(popupState)}>
+                      <Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" />
+                    </IconButton>
+                    <Menu {...bindMenu(popupState)}>
+                      <MenuItem onClick={ () => {popupState.close(); logoutUser();}}>Logout</MenuItem>
+                    </Menu>
+                  </React.Fragment>
+                )}
+              </PopupState>
             </Grid>
           </Grid>
         </Toolbar>

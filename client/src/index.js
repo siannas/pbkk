@@ -30,7 +30,9 @@ import Sidebar from './view/sidebar';
 import TablePivot from './view/table pivot';
 import TableKonkin from './view/tableKonkin';
 
-import { loadUserFromToken } from './actions/authActions'
+import { loadUserFromToken } from './actions/authActions';
+
+import LoginForm from './view/LoginForm';
 
 const List=[
   "Aktuaria",
@@ -106,7 +108,9 @@ class MainContainer extends React.Component {
   render() {
     return (
       <div {...this.props}>
+        {!this.state.authenticated ? <LoginForm /> : ""}
         {this.props.children}
+        {/* {React.cloneElement(this.props.children, { authenticated: this.state.authenticated })} */}
       </div>
     );
   }
